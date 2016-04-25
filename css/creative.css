@@ -13,7 +13,7 @@ body {
   font-family: 'Merriweather', 'Helvetica Neue', Arial, sans-serif;
 }
 hr {
-  border-color: #009688;
+  border-color: #f05f40;
   border-width: 3px;
   max-width: 50px;
 }
@@ -24,11 +24,11 @@ a {
   -webkit-transition: all 0.35s;
   -moz-transition: all 0.35s;
   transition: all 0.35s;
-  color: #009688;
+  color: #f05f40;
 }
 a:hover,
 a:focus {
-  color: #009688;
+  color: #f05f40;
 }
 h1,
 h2,
@@ -43,8 +43,17 @@ p {
   line-height: 1.5;
   margin-bottom: 20px;
 }
+
+.books-div{
+  text-decoration: none !important;
+}
+
+.books-div h3{
+  color: #222222;
+}
+
 .bg-primary {
-  background-color: #009688;
+  background-color: #f05f40;
 }
 .bg-dark {
   background-color: #222222;
@@ -94,11 +103,11 @@ aside {
 .navbar-default .nav > li > a:hover,
 .navbar-default .nav > li > a:focus:hover {
   /*color: #f05f40;*/
-  color: #009688;
+  color: #f05f40;
 }
 .navbar-default .nav > li.active > a,
 .navbar-default .nav > li.active > a:focus {
-  color: #009688 !important;
+  color: #f05f40 !important;
   background-color: white;
 }
 .navbar-default .nav > li.active > a:hover,
@@ -115,7 +124,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('../img/bg.jpg');
+  background-image: url('../img/home.jpg');
   text-align: center;
   color: white;
 }
