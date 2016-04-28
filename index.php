@@ -112,7 +112,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Savy Rocket 2016</p>
+                    <p>Copyright &copy; SRA 2016</p>
                 </div>
             </div>
         </div>
