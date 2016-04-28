@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Savy Rocket | A New Way Of Reading</title>
+    <title>Flying Book | A New Way Of Reading</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" >SavyRocket</a>
+                <a class="navbar-brand" href="index.html" >Flying Book</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -73,7 +73,7 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1>Savy Rocket
+                <h1>Flying Book
                 </h1><br />
                 <h3>A New Way Of Reading</h3>
                 <hr>
