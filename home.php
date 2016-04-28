@@ -77,6 +77,29 @@
                 </h1><br />
                 <h3>A New Way Of Reading</h3>
                 <hr>
+                <div class="row">
+                <form action="" method="post">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3">
+                        <select name="client_id" class="form-control">
+                            <option value="">All Categories</option>
+                            <option value="">Category 1</option>
+                            <option value="">Category 2</option>
+                            <option value="">Category 3</option>
+                            <option value="">Category 4</option>
+                            <option value="">Category 5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" name="uname" id="uname" placeholder="Enter Book Name">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="submit" class="form-control" value="Search">
+                    </div>
+                    <div class="col-md-1"></div>
+                </form>
+                </div>
+                <br />
                 <!-- <h3>Coming Soon</h3> -->
                 <a href="#about" class="btn btn-default btn-xl page-scroll wow tada">Find Out More</a>
             </div>
