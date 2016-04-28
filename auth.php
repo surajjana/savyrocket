@@ -5,7 +5,7 @@
 	$uname = $_POST['uname'];
 	$pwd = $_POST['pwd'];
 
-	if ((strcmp($uname,"savyrocket") == 0) && (strcmp($pwd,"savyrocket1234") == 0) ) {
+	if ((strcmp($uname,"flyingbook") == 0) && (strcmp($pwd,"flyingbook1234") == 0) ) {
         ob_start(); // ensures anything dumped out will be caught
 
         // do stuff here
