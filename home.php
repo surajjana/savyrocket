@@ -63,6 +63,12 @@
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+                    <li>
+                        <a class="page-scroll" href="#">
+                            <i class="fa fa-cart-plus fa-2x"></i>
+                            <div style="font-size:10px;position:relative;top:-25px;left:25px;">10</div>
+                        </a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -243,7 +249,7 @@
                 </div>
                 <div class="col-lg-4 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                    <p><a href="mailto:info@careersensy.com">info@savyrocket.com</a></p>
+                    <p><a href="mailto:info@careersensy.com">info@flyingbook.com</a></p>
                 </div>
             </div>
         </div>
