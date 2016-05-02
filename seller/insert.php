@@ -38,7 +38,7 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$book_img = DOMAIN_SELLER.'books/'.$_FILES['book_img']['name'];
+$book_img = './seller/books/'.$_FILES['book_img']['name'];
 
 $sql = "insert into books(book_id,name,author,publication,category,isbn,price,description,seller,book_img,sale_bid,bid_duration,bid_price,time_added,time_modified) values('','".$_POST["name"].
 	"','".$_POST["author"]."','".$_POST["pub"]."','".$_POST["cat"]."','".$_POST["isbn"].

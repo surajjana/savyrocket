@@ -11,7 +11,7 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$sql = "select category from books";
+$sql = "select * from books limit 0,50";
 
 $retval = mysql_query( $sql, $conn );
 
@@ -20,13 +20,20 @@ if(! $retval )
   die('Could not get data: ' . mysql_error());
 }
 
-$res = array();
-
 while ($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-   $res[] = $row['category'];
+	$b_img = explode("http://localhost/flyingbook/", $row['book_img']);
+	$b_img = $b_img[1];
+
+	$sql = "update books set book_img='".$b_img."' where book_id=".$row['book_id'];
+
+	$retval_1 = mysql_query( $sql, $conn );
 }
 
-print_r(array_unique($res));
+/*$arr = explode("http://localhost/flyingbook/", "http://localhost/flyingbook/seller/books/33.jpg");
+
+var_dump($arr);*/
+
+echo "Done";
 
 mysql_close($conn);
 
