@@ -9,7 +9,7 @@
         ob_start(); // ensures anything dumped out will be caught
 
         // do stuff here
-        $url = HOST.'home.php'; // this can be set based on whatever
+        $url = DOMAIN.'home.php'; // this can be set based on whatever
 
         // clear out the output buffer
         while (ob_get_status()) 
@@ -23,7 +23,7 @@
         ob_start(); // ensures anything dumped out will be caught
 
         // do stuff here
-        $url = HOST.'index.php'; // this can be set based on whatever
+        $url = DOMAIN.'index.php'; // this can be set based on whatever
 
         // clear out the output buffer
         while (ob_get_status()) 

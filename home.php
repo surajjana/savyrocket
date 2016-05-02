@@ -1,3 +1,52 @@
+<?php  
+
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
+require_once("conf/constants.php");
+session_start();
+
+$conn = mysql_connect(HOST, USER, PASSWORD);
+if(! $conn )
+{
+  die('Could not connect: ' . mysql_error());
+}
+
+mysql_select_db(DB);
+
+$sql = "select category from books where sale_bid=0";
+
+$retval = mysql_query( $sql, $conn );
+
+if(! $retval )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
+$res = array();
+
+while ($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+   $res[] = $row['category'];
+}
+
+$cat = array_unique($res);
+
+$sql_trending = "SELECT * FROM books WHERE sale_bid=0 ORDER BY visits DESC LIMIT 0 , 4";
+$retval_trending = mysql_query( $sql_trending, $conn );
+
+if(! $retval_trending )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
+$sql_bid = "SELECT * FROM books WHERE sale_bid=1 ORDER BY visits DESC LIMIT 0 , 4";
+$retval_bid = mysql_query( $sql_bid, $conn );
+
+if(! $retval_bid )
+{
+  die('Could not get data: ' . mysql_error());
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,14 +110,38 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="bid.php">Bidding</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#">
+                        <a href="vl.php">Virtual Library</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                    <?php  
+                        if(strcmp($_SESSION["fb_user"],"NA") == 0 || strlen($_SESSION["fb_user"]) == 0){
+                            echo '<li>
+                        <a class="page-scroll" href="cart.php">
                             <i class="fa fa-cart-plus fa-2x"></i>
-                            <div style="font-size:10px;position:relative;top:-25px;left:25px;">10</div>
                         </a>
                     </li>
+                    <li>
+                        <a href="login.php">Log In</a>
+                    </li>';
+                }else{
+                    echo '<li>
+                        <a class="page-scroll" href="cart.php">
+                            <i class="fa fa-cart-plus fa-2x"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.php">'.$_SESSION['fb_user'].'</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Logout</a>
+                    </li>';
+                }?>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -84,25 +157,25 @@
                 <h3>A New Way Of Reading</h3>
                 <hr>
                 <div class="row">
-                <form action="" method="post">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-3">
-                        <select name="client_id" class="form-control">
-                            <option value="">All Categories</option>
-                            <option value="">Category 1</option>
-                            <option value="">Category 2</option>
-                            <option value="">Category 3</option>
-                            <option value="">Category 4</option>
-                            <option value="">Category 5</option>
+                <form action="books.php" method="get">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-4">
+                        <select name="cat" class="form-control">
+                            <?php  
+                                foreach($cat as $x){
+                                    echo '<option value="'.$x.'">'.$x.'</option>';
+                                }
+                            ?>
+                            
                         </select>
                     </div>
-                    <div class="col-md-5">
+                    <!-- <div class="col-md-5">
                         <input type="text" class="form-control" name="uname" id="uname" placeholder="Enter Book Name">
-                    </div>
+                    </div> -->
                     <div class="col-md-2">
                         <input type="submit" class="form-control" value="Search">
                     </div>
-                    <div class="col-md-1"></div>
+                    <div class="col-md-3"></div>
                 </form>
                 </div>
                 <br />
@@ -118,7 +191,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">About Us</h2>
                     <hr class="light">
-                    <p>Careersensy is a platform that helps you to shape your career by guiding you to your next step. The platform performs psychometric analysis to understand the skill-set and interest of an individual. In accordance with the analysis made apt career choices for an individual are enlisted. Online assessments are conducted and analysed to assist an individual in identifying the areas of improvement.</p>
+                    <p></p>
                     <!-- <a href="#services" class="page-scroll btn btn-default btn-xl wow tada">Key Features!</a> -->
                 </div>
             </div>
@@ -136,36 +209,22 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center touch-anchor">
-                    <a href="#" class="books-div">
+                <?php  
+                    while($row = mysql_fetch_array($retval_trending, MYSQL_ASSOC)){
+                        echo '<div class="col-lg-3 col-md-6 text-center touch-anchor">
+                    <a href="detail.php?id='.$row['book_id'].'" class="books-div" style="text-decoration:none;">
                     <div class="service-box">
-                        <img src="img/books/1.jpg" style="width:50%;">
-                        <h3>Psychometric Analysis</h3>
-                        <p class="text-muted">Meticulous analysis done for each user to provide career suggestions</p>
+                        <img src="'.$row['book_img'].'" style="width:50%;">
+                        <h3>'.$row['name'].'</h3>
+                        <p class="text-muted">Author : '.$row['author'].'</p>
+                        <p class="text-muted">Price : '.$row['price'].'</p>
                     </div>
                     </a>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/books/2.jpg" style="width:50%;">
-                        <h3>Ready to Take Off</h3>
-                        <p class="text-muted">Proper guidance on how to start off and prepare for the chosen career</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/books/3.jpg" style="width:50%;">
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">Updates on recent trends in market for different career opportunities</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/books/4.jpg" style="width:50%;">
-                        <h3>Find your path</h3>
-                        <p class="text-muted">Help to chose a career that you love</p>
-                    </div>
-                </div>
+                </div>';
+                    }
+                ?>
+                
+                
             </div>
         </div>
     </section>
@@ -192,34 +251,21 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <?php  
+                    while($row = mysql_fetch_array($retval_bid, MYSQL_ASSOC)){
+                        echo '<div class="col-lg-3 col-md-6 text-center touch-anchor">
+                    <a href="#" class="books-div" style="text-decoration:none;">
                     <div class="service-box">
-                        <img src="img/books/5.jpg" style="width:50%;">
-                        <h3>Psychometric Analysis</h3>
-                        <p class="text-muted">Meticulous analysis done for each user to provide career suggestions</p>
+                        <img src="'.$row['book_img'].'" style="width:50%;">
+                        <h3>'.$row['name'].'</h3>
+                        <p class="text-muted">Author : '.$row['author'].'</p>
+                        <p class="text-muted">Bid Price : '.$row['bid_price'].'</p>
+                        <p class="text-muted">Latest Bid  : </p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/books/4.jpg" style="width:50%;">
-                        <h3>Ready to Take Off</h3>
-                        <p class="text-muted">Proper guidance on how to start off and prepare for the chosen career</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <img src="img/books/3.jpg" style="width:50%;">
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">Updates on recent trends in market for different career opportunities</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center touch-anchor">
-                    <div class="service-box">
-                        <img src="img/books/2.jpg" style="width:50%;">
-                        <h3>Find your path</h3>
-                        <p class="text-muted">Help to chose a career that you love</p>
-                    </div>
-                </div>
+                    </a>
+                </div>';
+                    }
+                ?>
             </div>
         </div>
     </section>
@@ -241,7 +287,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">Let's Get In Touch!</h2>
                     <hr class="primary">
-                    <p>Ready to start your career search? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    <p>Give us a call or send us an email and we will get back to you as soon as possible!</p>
                 </div>
                 <div class="col-lg-4 col-lg-offset-2 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
