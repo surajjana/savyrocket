@@ -19,6 +19,22 @@ if(! $retval )
   die('Could not get data: ' . mysql_error());
 }
 
+$to = $_POST['email'];
+$subject = 'Welcome To Flying Book';
+
+$message = "<html><body>
+                <p>Welcome ".$_POST['uname']."!!</p>
+                <p>We are glad to have you on Flying Book.</p><br /><br />
+                <p>Thank you,</p>
+                <p>Flying Book Team</p>
+                ";
+
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+                $headers .= 'From: Flying Book <noreply@flyingbook.com>' . "\r\n";
+
+mail($to,$subject,$message,$headers);
+
 
 mysql_close($conn);
 
