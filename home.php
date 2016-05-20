@@ -116,6 +116,9 @@ if(! $retval_bid )
                         <a href="vl.php">Virtual Library</a>
                     </li>
                     <li>
+                        <a href="seller/index.html">Seller</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <?php  
@@ -289,13 +292,21 @@ if(! $retval_bid )
                     <hr class="primary">
                     <p>Give us a call or send us an email and we will get back to you as soon as possible!</p>
                 </div>
-                <div class="col-lg-4 col-lg-offset-2 text-center">
+                <div class="col-lg-3 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
                     <p>+91-8553236639</p>
                 </div>
-                <div class="col-lg-4 text-center">
+                <div class="col-lg-3 text-center">
                     <i class="fa fa-envelope-o fa-3x wow bounceIn" data-wow-delay=".1s"></i>
                     <p><a href="mailto:info@careersensy.com">info@flyingbook.com</a></p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-facebook fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p><a href="http://fb.com/flyingbook">fb.com/flyingbook</a></p>
+                </div>
+                <div class="col-lg-3 text-center">
+                    <i class="fa fa-twitter fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                    <p>@flyingbook</p>
                 </div>
             </div>
         </div>
@@ -304,8 +315,17 @@ if(! $retval_bid )
     <section id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-4">
                     <p>Copyright &copy; SRA 2016</p>
+                </div>
+                <div class="col-lg-2">
+                    <a href="#"><p>Careers</p></a>
+                </div>
+                <div class="col-lg-3">
+                    <a href="#"><p>Terms & Conditions</p></a>
+                </div>
+                <div class="col-lg-2">
+                    <a href="#"><p>Privacy Policy</p></a>
                 </div>
             </div>
         </div>
