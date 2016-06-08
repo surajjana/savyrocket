@@ -114,8 +114,8 @@ echo nl2br('Total Amount : '.$_SESSION[$_SESSION['fb_user'].'-total-price']);*/
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
                 Name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" value="<?php echo $row['uname']; ?>" name="name"><br />
                 Address &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" value="<?php echo $row['address']; ?>" name="address"><br />
                 Total Amount : <input type="text" value="<?php echo $_SESSION[$_SESSION['fb_user'].'-total-price']; ?>" name="name"><br />
@@ -129,7 +129,7 @@ echo nl2br('Total Amount : '.$_SESSION[$_SESSION['fb_user'].'-total-price']);*/
                 CVV Number : <input type="password" name="name" placeholder="Enter CVV"><br />
                 <a href="pay.php"><button class="btn btn-primary">Pay Now</button></a>
                 </div>
-                <div class="col-md-2"></div>
+                <div class="col-md-3"></div>
             </div>
         </div>
     </section>
