@@ -12,21 +12,38 @@ if(! $conn )
 
 mysql_select_db(DB);
 
-$sql = "insert into bid(b_id,book_id,user,b_amount,b_time) values('',".$_GET['book_id'].",'".$_SESSION['fb_user']."','".$_GET['bid_val']."','".time()."')";
+if(strcmp($_SESSION["fb_user"],"NA") == 0 || strlen($_SESSION["fb_user"]) == 0){
+    ob_start(); // ensures anything dumped out will be caught
 
-$retval = mysql_query($sql, $conn);
+    // do stuff here
+    $url = DOMAIN.'invalid_login.php'; // this can be set based on whatever
 
-ob_start(); // ensures anything dumped out will be caught
+    // clear out the output buffer
+    while (ob_get_status()) 
+    {
+        ob_end_clean();
+    }
 
-// do stuff here
-$url = DOMAIN.'bid_it.php?id='.$_GET['book_id']; // this can be set based on whatever
+    // no redirect
+    header( "Location: $url" );
+}else{
 
-// clear out the output buffer
-while (ob_get_status()) 
-{
-    ob_end_clean();
+	$sql = "insert into bid(b_id,book_id,user,b_amount,b_time) values('',".$_GET['book_id'].",'".$_SESSION['fb_user']."','".$_GET['bid_val']."','".time()."')";
+
+	$retval = mysql_query($sql, $conn);
+
+	ob_start(); // ensures anything dumped out will be caught
+
+	// do stuff here
+	$url = DOMAIN.'bid_it.php?id='.$_GET['book_id']; // this can be set based on whatever
+
+	// clear out the output buffer
+	while (ob_get_status()) 
+	{
+	    ob_end_clean();
+	}
+
+	// no redirect
+	header( "Location: $url" );
 }
-
-// no redirect
-header( "Location: $url" );
 ?>
