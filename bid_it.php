@@ -20,6 +20,8 @@ if(! $retval )
   die('Could not get data: ' . mysql_error());
 }
 
-var_dump($retval);
+$row = mysql_fetch_array($retval, MYSQL_ASSOC);
+
+var_dump($row);
 
 ?>
