@@ -22,6 +22,11 @@ if(! $retval )
 
 $row = mysql_fetch_array($retval, MYSQL_ASSOC);
 
+$sql = "select * from bid where book_id=".$_GET['id']." order by bid desc limit 1";
+$retval = mysql_query( $sql, $conn );
+
+$row_bid = mysql_fetch_array($retval, MYSQL_ASSOC);
+
 /*var_dump($row);*/
 
 ?>
@@ -152,7 +157,7 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
                 <div class="col-lg-5 col-md-6">
                 	<div class="service-box">
                 		<p class="text-muted">Bid Ends In : <?php echo $row['bid_duration']." hours";?></p>
-                		<p class="text-muted">Last Bid : <?php echo "400";?></p>
+                		<p class="text-muted">Last Bid : <?php echo $row_bid['b_amount']." INR";?></p>
                         <br />
                         <a href="bid_final.php?id=<?php echo $_GET['id']; ?>"><button class="btn btn-primary">Bid It</button></a>
                     </div>
