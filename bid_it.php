@@ -139,16 +139,25 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
         </div>
         <div class="container">
             <div class="row">
-            	<div class="col-lg-4"></div>
-                <div class="col-lg-4 col-md-6 text-center touch-anchor" style:"max-height:100px;">
+            	<div class="col-lg-1"></div>
+                <div class="col-lg-5 col-md-6 text-center touch-anchor" style:"max-height:100px;">
                     <div class="service-box">
-                        <img src="<?php echo $row['book_img']; ?>" style="width:50%;">
+                        <img src="<?php echo $row['book_img']; ?>" style="width:40%;">
                         <h3><?php echo $row['name'];?></h3>
                         <p class="text-muted">Author : <?php echo $row['author'];?></p>
                         <p class="text-muted">Price : <?php echo $row['price'];?></p>
+                        <p class="text-muted"></p>
                     </div>
                 </div>  
-            	<div class="col-lg-4"></div>          
+                <div class="col-lg-5 col-md-6">
+                	<div class="service-box">
+                		<p class="text-muted">Bid Ends In : <?php echo "5 hours";?></p>
+                		<p class="text-muted">Last Bid : <?php echo "400";?></p>
+                        <br />
+                        <a href="bid_final.php?id=<?php echo $_GET['id']; ?>"></a><button class="btn btn-primary">Bid It</button>
+                    </div>
+                </div>
+            	<div class="col-lg-1"></div>          
             </div>
         </div>
     </section>
