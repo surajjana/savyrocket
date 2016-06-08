@@ -160,7 +160,7 @@ $row_bid = mysql_fetch_array($retval, MYSQL_ASSOC);
                 		<p class="text-muted">Last Bid : <?php echo $row_bid['b_amount']." INR";?></p>
                         <br />
                         <form action="bid_final.php" method="get">
-                            <input type="text" class="form-group" name="bid_val">
+                            <input type="text" class="form-group" name="bid_val" placeholder="Enter Bid Amount">
                             <input type="hidden" name="book_id" value="<?php echo $_GET['id']; ?>">
                             <button class="btn btn-primary" type="submit">Bid It</button>
                         </form>
