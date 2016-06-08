@@ -257,13 +257,12 @@ if(! $retval_bid )
                 <?php  
                     while($row = mysql_fetch_array($retval_bid, MYSQL_ASSOC)){
                         echo '<div class="col-lg-3 col-md-6 text-center touch-anchor">
-                    <a href="#" class="books-div" style="text-decoration:none;">
+                    <a href="bid_it.php?id='.$row['book_id'].'" class="books-div" style="text-decoration:none;">
                     <div class="service-box">
                         <img src="'.$row['book_img'].'" style="width:50%;">
                         <h3>'.$row['name'].'</h3>
                         <p class="text-muted">Author : '.$row['author'].'</p>
                         <p class="text-muted">Bid Price : '.$row['bid_price'].'</p>
-                        <p class="text-muted">Latest Bid  : </p>
                     </div>
                     </a>
                 </div>';
