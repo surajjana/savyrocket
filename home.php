@@ -110,7 +110,7 @@ if(! $retval_bid )
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a href="bid.php">Bidding</a>
+                        <a href="bid.php">Biding</a>
                     </li>
                     <li>
                         <a href="vl.php">Virtual Library</a>
@@ -194,7 +194,7 @@ if(! $retval_bid )
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">About Us</h2>
                     <hr class="light">
-                    <p>Flying Book is an online retailer in India & growing e-commerce Technology Company. It offers cloud based e-commerce platform service in B2C and B2B verticals and is recognized for its innovative approach towards delivering business values and responsive to changing customer needs</p>
+                    <p>Flying Book is an online retailer in India & growing e-commerce Technology Company. It offers cloud based e-commerce platform service in B2C and B2B verticals and is recognized for its innovative approach towards delivering business values and responsive to changing customer needs.</p>
                     <!-- <a href="#services" class="page-scroll btn btn-default btn-xl wow tada">Key Features!</a> -->
                 </div>
             </div>
