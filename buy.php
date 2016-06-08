@@ -116,9 +116,9 @@ echo nl2br('Total Amount : '.$_SESSION[$_SESSION['fb_user'].'-total-price']);*/
             <div class="row">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
-                Name : <input type="text" value="<?php echo $row['uname']; ?>" name="name">
-                Address : <input type="text" value="<?php echo $row['address']; ?>" name="address">
-                Total Amount : <input type="text" value="<?php echo $_SESSION[$_SESSION['fb_user'].'-total-price']; ?>" name="name">
+                Name : <input type="text" value="<?php echo $row['uname']; ?>" name="name"><br />
+                Address : <input type="text" value="<?php echo $row['address']; ?>" name="address"><br />
+                Total Amount : <input type="text" value="<?php echo $_SESSION[$_SESSION['fb_user'].'-total-price']; ?>" name="name"><br />
                 <br />
                 <a href="pay.php"><button class="btn btn-primary">Pay Now</button></a>
                 </div>
