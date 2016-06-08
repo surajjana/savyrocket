@@ -159,6 +159,16 @@ if(! $retval )
                     </div>
                     </a>
                 </div>
+                <div class="col-lg-4 col-md-6 text-center touch-anchor">
+                    <a href="vl/ai/index.html" class="books-div" style="text-decoration:none;">
+                    <div class="service-box">
+                        <img src="./vl/ai/target/0639d671c236a9d83288f256d7f9c8fc.png" style="width:50%;">
+                        <h3>Gender Detection Using Gait</h3>
+                        <!-- <p class="text-muted">Author</p>
+                        <p class="text-muted">Price</p> -->
+                    </div>
+                    </a>
+                </div>
                 <!-- <div class="col-lg-4 col-md-6 text-center touch-anchor">
                     <a href="#" class="books-div" style="text-decoration:none;">
                     <div class="service-box">
