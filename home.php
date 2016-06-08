@@ -237,7 +237,7 @@ if(! $retval_bid )
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Some quote here.</h2>
+                <h2>You have to dream before your dreams can come true. --A.P.J Abdul Kalam</h2>
                 <!--<a href="#" class="btn btn-default btn-xl wow tada">Check Now!</a>-->
             </div>
         </div>
@@ -278,7 +278,7 @@ if(! $retval_bid )
     <aside class="bg-dark">
         <div class="container text-center">
             <div class="call-to-action">
-                <h2>Some quote here.</h2>
+                <h2>Love all, trust a few, do wrong to none. --William Shakespear</h2>
                 <!--<a href="#" class="btn btn-default btn-xl wow tada">Check Now!</a>-->
             </div>
         </div>
