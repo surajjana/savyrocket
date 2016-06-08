@@ -123,6 +123,10 @@ echo nl2br('Total Amount : '.$_SESSION[$_SESSION['fb_user'].'-total-price']);*/
                 <input type="radio" name="pay_m" value="card" />Card
                 <input type="radio" name="pay_m" value="cod" />COD
                 <br />
+                Card Number : <input type="text" name="name" placeholder="Enter Card Number"><br />
+                Name On Card : <input type="text" name="name" placeholder="Enter Name On Card"><br />
+                Validity : <input type="text" name="name" placeholder="MM/YYYY"><br />
+                CVV Number : <input type="password" name="name" placeholder="Enter CVV"><br />
                 <a href="pay.php"><button class="btn btn-primary">Pay Now</button></a>
                 </div>
                 <div class="col-md-2"></div>
