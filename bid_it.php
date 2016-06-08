@@ -22,7 +22,7 @@ if(! $retval )
 
 $row = mysql_fetch_array($retval, MYSQL_ASSOC);
 
-$sql = "select * from bid where book_id=".$_GET['id']." order by bid desc limit 1";
+$sql = "select * from bid where book_id=".$_GET['id']." order by b_id desc limit 1";
 $retval = mysql_query( $sql, $conn );
 
 $row_bid = mysql_fetch_array($retval, MYSQL_ASSOC);
