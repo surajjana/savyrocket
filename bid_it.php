@@ -145,7 +145,7 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
                         <img src="<?php echo $row['book_img']; ?>" style="width:40%;">
                         <h3><?php echo $row['name'];?></h3>
                         <p class="text-muted">Author : <?php echo $row['author'];?></p>
-                        <p class="text-muted">Price : <?php echo $row['price'];?></p>
+                        <p class="text-muted">Price : <?php echo $row['price'].' INR';?></p>
                         <p class="text-muted"></p>
                     </div>
                 </div>  
@@ -154,7 +154,7 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
                 		<p class="text-muted">Bid Ends In : <?php echo "5 hours";?></p>
                 		<p class="text-muted">Last Bid : <?php echo "400";?></p>
                         <br />
-                        <a href="bid_final.php?id=<?php echo $_GET['id']; ?>"></a><button class="btn btn-primary">Bid It</button>
+                        <a href="bid_final.php?id=<?php echo $_GET['id']; ?>"><button class="btn btn-primary">Bid It</button></a>
                     </div>
                 </div>
             	<div class="col-lg-1"></div>          
