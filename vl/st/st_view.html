@@ -100,42 +100,9 @@ if(! $retval )
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <!-- <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li> -->
-                    <li>
-                        <a href="bid.php">Bidding</a>
-                    </li>
-                    <li>
-                        <a href="vl.php">Virtual Library</a>
-                    </li>
                     <li>
                         <div id="timer"></div>
-                    </li>
-                    <?php  
-                        if(strcmp($_SESSION["fb_user"],"NA") == 0 || strlen($_SESSION["fb_user"]) == 0){
-                            echo '<li>
-                        <a class="page-scroll" href="cart.php">
-                            <i class="fa fa-cart-plus fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="login.php">Log In</a>
-                    </li>';
-                }else{
-                    echo '<li>
-                        <a class="page-scroll" href="cart.php">
-                            <i class="fa fa-cart-plus fa-2x"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="profile.php">'.$_SESSION['fb_user'].'</a>
-                    </li>
-                    <li>
-                        <a href="logout.php">Logout</a>
-                    </li>';
-                }?>
-                    
+                    </li>                   
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
