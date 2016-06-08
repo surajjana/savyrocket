@@ -151,7 +151,7 @@ $row = mysql_fetch_array($retval, MYSQL_ASSOC);
                 </div>  
                 <div class="col-lg-5 col-md-6">
                 	<div class="service-box">
-                		<p class="text-muted">Bid Ends In : <?php echo "5 hours";?></p>
+                		<p class="text-muted">Bid Ends In : <?php echo $row['bid_duration']." hours";?></p>
                 		<p class="text-muted">Last Bid : <?php echo "400";?></p>
                         <br />
                         <a href="bid_final.php?id=<?php echo $_GET['id']; ?>"><button class="btn btn-primary">Bid It</button></a>
