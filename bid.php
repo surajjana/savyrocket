@@ -138,7 +138,7 @@ if(! $retval )
                 <?php  
                     while($row = mysql_fetch_array($retval, MYSQL_ASSOC)){
                         echo '<div class="col-lg-4 col-md-6 text-center touch-anchor" style:"max-height:100px;">
-                    <a href="#" class="books-div" style="text-decoration:none;">
+                    <a href="bid_it.php?id='.$row['book_id'].'" class="books-div" style="text-decoration:none;">
                     <div class="service-box">
                         <img src="'.$row['book_img'].'" style="width:50%;">
                         <h3>'.$row['name'].'</h3>
