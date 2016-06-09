@@ -110,7 +110,7 @@ if(! $retval_bid )
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                     <li>
-                        <a href="bid.php">Biding</a>
+                        <a href="bid.php">Bidding</a>
                     </li>
                     <li>
                         <a href="vl.php">Virtual Library</a>
